@@ -39,11 +39,10 @@ const imgDomain = 'lodi';
 const imgAlt = 'lodibet';
 const puzzleImgArr = [];
 
-
 for (let i = 1; i <= 9; i++) {
   let url = '';
   // url += `${domain}wp-content/uploads/2024/11/${imgDomain}-puzzle${i}.webp`;
-  url += `/images/lodi-puzzle/${imgDomain}-puzzle${i}.webp`;
+  url += `images/lodi-puzzle/${imgDomain}-puzzle${i}.webp`;
   let imgInfo = {
     imgUrl: url,
     alt: imgAlt,
@@ -123,10 +122,10 @@ function createPuzzleBox() {
   }
 }
 function puzzleGameStart() {
-  	//0.restart清除拼圖
-	puzzleDragzoneRight.innerHTML = "";
-	puzzleDragzoneLeft.innerHTML = "";
-	puzzleGroup.innerHTML = "";
+  //0.restart清除拼圖
+  puzzleDragzoneRight.innerHTML = '';
+  puzzleDragzoneLeft.innerHTML = '';
+  puzzleGroup.innerHTML = '';
   // 1. 隨機打亂陣列順序
   puzzleImgArr.sort(() => Math.random() - 0.5);
 
@@ -179,7 +178,7 @@ const dragOver = (e) => {
     e.toElement.classList.add('hover');
   }
   // 放置區
-  if(e.target.className === 'puzzle-dragzone') {
+  if (e.target.className === 'puzzle-dragzone') {
     e.toElement.classList.add('hover');
   }
 };
@@ -191,23 +190,26 @@ const dragDrop = (e) => {
   // 確認目標是 .puzzleBox 且其中沒有其他拼圖
   let targetBox = e.target;
 
-  if(!targetBox) {
+  if (!targetBox) {
     return false;
   }
 
   // 如果對應位置已經有 puzzle，則交換
-  if ((targetBox.classList.contains('puzzle'))) {
+  if (targetBox.classList.contains('puzzle')) {
     // 拿到 draggingPuzzle 的原始位置的 parent
     // 拿到 targetBox 的 puzzle 的 parent
     const sourceOfDraggingPuzzle = draggingPuzzle.parentNode;
     const sourceOfTargetBox = targetBox.parentNode;
 
-    sourceOfDraggingPuzzle.appendChild(targetBox)
-    sourceOfTargetBox.appendChild(draggingPuzzle)
+    sourceOfDraggingPuzzle.appendChild(targetBox);
+    sourceOfTargetBox.appendChild(draggingPuzzle);
   }
 
   // 如果對應位置無 puzzle，則直接放置
-  if (targetBox.classList.contains('puzzleBox') || targetBox.classList.contains('puzzle-dragzone')) {
+  if (
+    targetBox.classList.contains('puzzleBox') ||
+    targetBox.classList.contains('puzzle-dragzone')
+  ) {
     // 放置
     targetBox.appendChild(draggingPuzzle);
   }
@@ -247,12 +249,12 @@ function checkAllDom(forceWin = false) {
     callAdminAjax({
       action: 'save_game_score',
       data: {
-        score: totalSeconds
+        score: totalSeconds,
       },
       onSuccess: () => {
         showFinishGamePage();
       },
-      onError: () => {}
+      onError: () => {},
     });
   }
 }
@@ -269,7 +271,9 @@ function showFinishGamePage() {
       // 清掉舊資料
       $(winGameInfoTable).children('.winGame-info-table-tbody').remove();
       // 建立 Table
-      $(winGameInfoTable).append(data.map(item => $(`
+      $(winGameInfoTable).append(
+        data.map((item) =>
+          $(`
           <div class="winGame-info-table-tbody">
             <div class="col-date">week ${item.week}<span>(${item.startDate}~${item.endDate})</span></div>
             <div class="col-time winGame-info-winTime" id="week1">
@@ -280,7 +284,9 @@ function showFinishGamePage() {
               ${item.promotionCode}
             </div>
           </div>
-      `)))
+      `),
+        ),
+      );
 
       puzzleGame.classList.add('hidden');
       setTimeout(function () {
@@ -289,7 +295,7 @@ function showFinishGamePage() {
         finishGame.style.display = 'block';
       }, 1000);
     },
-    onError: () => {}
+    onError: () => {},
   });
 }
 
@@ -298,7 +304,7 @@ function callAdminAjax(options) {
   // DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG
   // DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG
   // 記得刪除或改掉
-  if(options.action === '拿到成績的 action') {
+  if (options.action === '拿到成績的 action') {
     return options.onSuccess({
       data: [
         {
@@ -306,28 +312,28 @@ function callAdminAjax(options) {
           startDate: '11/8',
           endDate: '11/14',
           bestScore: '00:40',
-          promotionCode: 'BERMONTHSLOVE'
+          promotionCode: 'BERMONTHSLOVE',
         },
         {
           week: 2,
           startDate: '11/15',
           endDate: '11/21',
           bestScore: '',
-          promotionCode: ''
+          promotionCode: '',
         },
         {
           week: 3,
           startDate: '11/22',
           endDate: '11/28',
           bestScore: '',
-          promotionCode: ''
-        }
-      ]
-    })
+          promotionCode: '',
+        },
+      ],
+    });
   }
 
-  if(options.action === 'save_game_score') {
-    return options.onSuccess()
+  if (options.action === 'save_game_score') {
+    return options.onSuccess();
   }
   // DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG
   // DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG-DEBUG
@@ -337,7 +343,7 @@ function callAdminAjax(options) {
     action,
     onSuccess = () => {},
     onError = () => {},
-    data = {}
+    data = {},
   } = options;
 
   const ajaxData = Object.assign(data, { action });
@@ -345,7 +351,7 @@ function callAdminAjax(options) {
   return $.ajax({
     method: 'POST',
     // 因為後端沒提供 API Url，所以用以下方式
-    url: "/wp-admin/admin-ajax.php",
+    url: '/wp-admin/admin-ajax.php',
     contentType: 'application/x-www-form-urlencoded; charset=utf-8',
     data: ajaxData,
   })
@@ -356,13 +362,13 @@ function callAdminAjax(options) {
 // DEBUG!!!!
 window.win = () => checkAllDom(true);
 
-startGameBtn.addEventListener('click', function() {
+startGameBtn.addEventListener('click', function () {
   puzzleGameStart();
   startGame.style.display = 'none';
   puzzleGame.style.display = 'block';
 });
 
-restartBtn.addEventListener('click', function() {
+restartBtn.addEventListener('click', function () {
   puzzleGameStart();
   finishGame.style.display = 'none';
   puzzleGame.classList.remove('hidden');
