@@ -123,6 +123,10 @@ function createPuzzleBox() {
   }
 }
 function puzzleGameStart() {
+  	//0.restart清除拼圖
+	puzzleDragzoneRight.innerHTML = "";
+	puzzleDragzoneLeft.innerHTML = "";
+	puzzleGroup.innerHTML = "";
   // 1. 隨機打亂陣列順序
   puzzleImgArr.sort(() => Math.random() - 0.5);
 
