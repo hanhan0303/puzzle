@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/all.css" rel="stylesheet" />
+    <title>Lodi</title>
+  </head>
+  <body>
+    <div class="gameWrap-alert-overlay">
+      <div class="gameWrap-alert">
+        <div id="closeBtn">
+          <img src="images/icon/close.webp" alt="lodibet" title="lodibet" />
+        </div>
+        <div class="gameWrap-alert-body">
+          <div class="loading">
+            <p>Loading</p>
+            <div class="lds-ellipsis">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div class="login-google">
+            <div class="login-google-title">
+              <img src="images/icon/pipoy thanksgiving-s.webp"  alt="lodibet" title="lodibet" />
+              <p>Give Thanks and<span class="mob-b"></span> Win Big!</p>
+              <img src="images/icon/pipay thanksgiving-s.webp"  alt="lodibet" title="lodibet" />
+            </div>
+            <div class="login-google-body gradient-bg">
+              <p>
+                Here, you’ll face various game challenges, and upon successfully
+                completing them, you’ll receive Lodibet’s exclusive Thanksgiving
+                promo code. Want to win exciting prizes and free bonuses? Log in
+                now and take on the challenge!
+              </p>
+              <div class="login-btns" id="loginBtn">[xs_social_login]</div>
+            </div>
+          </div>
+          <div class="startGame">
+            <div class="startGame-banner">
+              <img
+                src="https://lodigamer.com/wp-content/uploads/2024/09/lodibet-game-intro.gif"
+                alt="lodibet" title="lodibet" />
+            </div>
+            <div class="startGame-content gradient-bg">
+              <div class="userName-label">
+                <img src="images/icon/user.webp"  alt="lodibet" title="lodibet" />
+                <label for="player-name-input"
+                  >Player Name<span>(Enter Your Lodibet Username)</span></label
+                >
+              </div>
+              <div class="userName-input">
+                <input
+                  class="input-box"
+                  type="text"
+                  id="player-name-input"
+                  value=""
+                />
+                <span class="input-message"
+                  >Please enter the player's name.</span
+                >
+                <span class="input-message2" id="update-result"
+                  >This player name is already taken.</span
+                >
+              </div>
+              <div
+                class="startGame-btn rainbow-btn"
+                id="update-player-name-btn"
+              >
+                <div class="dropDownBtn-rainbow">
+                  <div class="btn">
+                    <p class="text">START NOW</p>
+                    <div id="container-stars">
+                      <div id="stars"></div>
+                    </div>
+                    <div id="glow">
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="puzzleGame">
+            <div class="puzzleGame-banner"></div>
+            <div class="puzzleGame-body">
+              <div class="puzzleGame-container">
+                <div class="puzzleGroup-dragzone" id="puzzleGroup-dragzone-left">
+                  <!-- <div class="puzzle-dragzone">
+                    <img src="images/lodi-puzzle/lodi-puzzle1.webp"  alt="lodibet" title="lodibet" />
+                  </div>
+                  <div class="puzzle-dragzone">
+                    <img src="images/lodi-puzzle/lodi-puzzle2.webp"  alt="lodibet" title="lodibet" />
+                  </div>
+                  <div class="puzzle-dragzone">
+                    <img src="images/lodi-puzzle/lodi-puzzle3.webp"  alt="lodibet" title="lodibet" />
+                  </div>
+                  <div class="puzzle-dragzone">
+                    <img src="images/lodi-puzzle/lodi-puzzle4.webp"  alt="lodibet" title="lodibet" />
+                  </div>
+                  <div class="puzzle-dragzone">
+                    <img src="images/lodi-puzzle/lodi-puzzle5.webp"  alt="lodibet" title="lodibet" />
+                  </div> -->
+                </div>
+                <div class="puzzleGameBox">
+                  <img
+                    class="puzzleGameBox-icon"
+                    src="images/icon/puzzle.webp" alt="lodibet" title="lodibet"
+                  />
+                  <p>Complete the puzzle to unlock your promo code!</p>
+                  <div class="puzzleGroup">
+                    <!-- <div class="puzzleBox"></div>
+                    <div class="puzzleBox"></div>
+                    <div class="puzzleBox"></div>
+                    <div class="puzzleBox"></div>
+                    <div class="puzzleBox"></div>
+                    <div class="puzzleBox"></div>
+                    <div class="puzzleBox"></div>
+                    <div class="puzzleBox"></div>
+                    <div class="puzzleBox"></div> -->
+                  </div>
+                </div>
+                <div class="puzzleGroup-dragzone" id="puzzleGroup-dragzone-right">
+                  <!-- <div class="puzzle-dragzone">
+                    <img src="images/lodi-puzzle/lodi-puzzle6.webp"  alt="lodibet" title="lodibet" />
+                  </div>
+                  <div class="puzzle-dragzone">
+                    <img src="images/lodi-puzzle/lodi-puzzle7.webp"  alt="lodibet" title="lodibet" />
+                  </div>
+                  <div class="puzzle-dragzone">
+                    <img src="images/lodi-puzzle/lodi-puzzle8.webp"  alt="lodibet" title="lodibet" />
+                  </div>
+                  <div class="puzzle-dragzone">
+                    <img src="images/lodi-puzzle/lodi-puzzle9.webp"  alt="lodibet" title="lodibet" />
+                  </div>
+                  <div class="puzzle-dragzone"></div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="finishGame">
+            <div class="finish-gif">
+              <img
+                src="https://lodigamer.com/wp-content/uploads/2024/10/pipoy-thanksgiving-v2-bermonth-thnaksgiving.gif" alt="lodibet" title="lodibet"
+              />
+            </div>
+            <div class="finish-body gradient-bg">
+              <div class="finish-text">
+                <div class="bold-text">
+                  <img src="images/icon/pipoy thanksgiving-s.webp"  alt="lodibet" title="lodibet" />
+                  <p>Fantastic job!</p>
+                  <img src="images/icon/pipay thanksgiving-s.webp"  alt="lodibet" title="lodibet" />
+                </div>
+                <p class="mtb-16">
+                  This November, may you feel proud of what you’ve accomplished
+                  every moment of celebration. Here’s your promocode
+                </p>
+              </div>
+              <div class="finish-table">
+                <div class="winGame-info-table">
+                  <div class="winGame-info-table-thead">
+                    <div class="col-date">Event date</div>
+                    <div class="col-time">Best Time</div>
+                    <div class="col-code">Promocode</div>
+                  </div>
+                </div>
+              </div>
+              <div class="finish-btns">
+                <div class="restart-btn black-btn" id="restartBtn">
+                  <img src="images/icon/retry.webp"  alt="lodibet" title="lodibet" />RESTART
+                </div>
+                <div class="userInfoShow-btn effects-btn" id="check-prize-btn">
+                  <img src="images/icon/prize.webp"  alt="lodibet" title="lodibet" />Check your prize
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="prize-info">
+            <div class="user-info-playerName">
+              <img src="images/icon/pipoy thanksgiving-s.webp"  alt="lodibet" title="lodibet" />USER NAME
+            </div>
+            <div class="toggle-btns">
+              <div class="user-info-toggle-btn click-btn" id="howToGet">
+                <img src="images/icon/prize.webp" alt="lodibet" title="lodibet"  />
+                <p class="pc-text">How to Claim the Prize?</p>
+                <p class="mob-text">Claim Prize</p>
+              </div>
+              <div class="user-info-toggle-btn" id="fbEvent">
+                <img src="images/icon/fb.webp" alt="lodibet" title="lodibet"  />
+                <p class="pc-text">Facebook event</p>
+                <p class="mob-text">FB event</p>
+              </div>
+            </div>
+            <div class="toggle-content gradient-bg">
+              <div id="howToGet-content">
+                <p>
+                  📌Click the "CLAIM YOUR PRIZE" button below to enter the event
+                  page and follow the process to redeem your prize.
+                  <span class="mark-text"
+                    >Promo code redemption period ends at the end of the
+                    month.</span
+                  >
+                </p>
+                <p>
+                  📌 If you are not a member yet, please click "Register Now" at
+                  the bottom right to sign up, then return to proceed with the
+                  redemption.
+                </p>
+                <img
+                  class="howToGet-img howToGet-img-pc"
+                  src="https://lodigamer.com/wp-content/uploads/2024/09/How-to-Claim-Your-Bermonth-Promocode.jpg" alt="lodibet" title="lodibet"
+                />
+                <img
+                  class="howToGet-img howToGet-img-mob"
+                  src="https://lodigamer.com/wp-content/uploads/2024/09/How-to-Claim-Your-Bermonth-Promocode-png.jpg" alt="lodibet" title="lodibet"
+                />
+
+                <div class="howToGet-btns">
+                  <a
+                    class="effects-btn"
+                    id="bermonth_claim"
+                    href="https://lodibetbermonth.com/"
+                    rel="nofollow"
+                    target="_blank"
+                    ><img src="images/icon/pipoy thanksgiving-s.webp" alt="lodibet" title="lodibet"  />
+                    <span>CLAIM YOUR PRIZE</span>
+                  </a>
+                  <a
+                    class="effects-btn"
+                    id="bermonth_reg"
+                    href="https://lodibet00.com/X6SBXg"
+                    rel="nofollow"
+                    target="_blank"
+                    ><img src="images/icon/pipay thanksgiving-s.webp" alt="lodibet" title="lodibet"  /><span
+                      >Register Now</span
+                    ></a
+                  >
+                </div>
+              </div>
+              <div id="fb-content">
+                <div class="winGame-content-text">
+                  <img src="images/icon/gift.png" alt="lodibet" title="lodibet"  />
+                  <p>
+                    In addition to unlocking a promo code each week by
+                    completing challenges,
+                    <span class="mark-text"
+                      >at the end of the month, we will reward the top ten
+                      performers with 100₱ in gaming credits.</span
+                    >
+                    The list of winners will be announced on our Facebook page,
+                    so make sure to follow us!
+                  </p>
+                </div>
+                <a
+                  class="fb-link"
+                  href="https://www.facebook.com/lodibetbonus"
+                  rel="nofollow"
+                  target="_blank"
+                >
+                  <img
+                    src="https://lodigamer.com/wp-content/uploads/2024/09/fb.webp" alt="lodibet" title="lodibet"
+                  />
+                  Follow Us
+                </a>
+                <div class="top10-ranking-message">
+                  <p>
+                    This month's event has concluded.<br />
+                    Please Look Forward to Next Month's Event!
+                  </p>
+                </div>
+                <div class="top10-ranking-table">
+                  <div class="top10-table-title">TOP 10 USER</div>
+                  <div class="top10-table-thead">
+                    <div>Ranking</div>
+                    <div>User Name</div>
+                    <div>Time</div>
+                    <div>Date</div>
+                  </div>
+                  <div class="top10-table-tbody">
+                    <div class="top10-col-name">
+                      <p class="top10-num">
+                        <span class="crown-icon">NO.1</span>
+                      </p>
+                      <p class="top10-userName">AAAAAAAAAA</p>
+                    </div>
+                    <div class="top10-userBestScore top10-col-time">00:00</div>
+                    <div class="top10-userDate top10-col-date">
+                      2024-09-20<br />
+                      15:31:52
+                    </div>
+                  </div>
+                  <div class="top10-table-tbody">
+                    <div class="top10-col-name">
+                      <p class="top10-num">
+                        <span class="crown-icon silver-crown">NO.2</span>
+                      </p>
+                      <p class="top10-userName">AAAAAAAAAA</p>
+                    </div>
+                    <div class="top10-userBestScore top10-col-time">00:00</div>
+                    <div class="top10-userDate top10-col-date">
+                      2024-09-20<br />
+                      15:31:52
+                    </div>
+                  </div>
+                  <div class="top10-table-tbody">
+                    <div class="top10-col-name">
+                      <p class="top10-num">
+                        <span class="crown-icon bronze-crown">NO.3</span>
+                      </p>
+                      <p class="top10-userName">AAAAAAAAAA</p>
+                    </div>
+                    <div class="top10-userBestScore top10-col-time">00:00</div>
+                    <div class="top10-userDate top10-col-date">
+                      2024-09-20<br />
+                      15:31:52
+                    </div>
+                  </div>
+                  <div class="top10-table-tbody">
+                    <div class="top10-col-name">
+                      <p class="top10-num">NO.4</p>
+                      <p class="top10-userName">AAAAAAAAAA</p>
+                    </div>
+                    <div class="top10-userBestScore top10-col-time">00:00</div>
+                    <div class="top10-userDate top10-col-date">
+                      2024-09-20<br />
+                      15:31:52
+                    </div>
+                  </div>
+                  <div class="top10-table-tbody">
+                    <div class="top10-col-name">
+                      <p class="top10-num">NO.5</p>
+                      <p class="top10-userName">AAAAAAAAAA</p>
+                    </div>
+                    <div class="top10-userBestScore top10-col-time">00:00</div>
+                    <div class="top10-userDate top10-col-date">
+                      2024-09-20<br />
+                      15:31:52
+                    </div>
+                  </div>
+                  <div class="top10-table-tbody">
+                    <div class="top10-col-name">
+                      <p class="top10-num">NO.6</p>
+                      <p class="top10-userName">AAAAAAAAAA</p>
+                    </div>
+                    <div class="top10-userBestScore top10-col-time">00:00</div>
+                    <div class="top10-userDate top10-col-date">
+                      2024-09-20<br />
+                      15:31:52
+                    </div>
+                  </div>
+                  <div class="top10-table-tbody">
+                    <div class="top10-col-name">
+                      <p class="top10-num">NO.7</p>
+                      <p class="top10-userName">AAAAAAAAAA</p>
+                    </div>
+                    <div class="top10-userBestScore top10-col-time">00:00</div>
+                    <div class="top10-userDate top10-col-date">
+                      2024-09-20<br />
+                      15:31:52
+                    </div>
+                  </div>
+                  <div class="top10-table-tbody">
+                    <div class="top10-col-name">
+                      <p class="top10-num">NO.8</p>
+                      <p class="top10-userName">AAAAAAAAAA</p>
+                    </div>
+                    <div class="top10-userBestScore top10-col-time">00:00</div>
+                    <div class="top10-userDate top10-col-date">
+                      2024-09-20<br />
+                      15:31:52
+                    </div>
+                  </div>
+                  <div class="top10-table-tbody">
+                    <div class="top10-col-name">
+                      <p class="top10-num">NO.9</p>
+                      <p class="top10-userName">AAAAAAAAAA</p>
+                    </div>
+                    <div class="top10-userBestScore top10-col-time">00:00</div>
+                    <div class="top10-userDate top10-col-date">
+                      2024-09-20<br />
+                      15:31:52
+                    </div>
+                  </div>
+                  <div class="top10-table-tbody">
+                    <div class="top10-col-name">
+                      <p class="top10-num">NO.10</p>
+                      <p class="top10-userName">AAAAAAAAAA</p>
+                    </div>
+                    <div class="top10-userBestScore top10-col-time">00:00</div>
+                    <div class="top10-userDate top10-col-date">
+                      2024-09-20<br />
+                      15:31:52
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    <script src="drag-drop-touch.esm.min.js?autoload" type="module"></script>
+    <script type="text/javascript" src="all.js"></script>
+  </body>
+</html>

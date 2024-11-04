@@ -1,0 +1,50 @@
+
+.login-btns #xs-social-login-container {
+  margin: 0;
+  padding: 0;
+}
+
+.login-btns #xs-social-login-container .xs-login {
+  width: 213px;
+}
+
+.login-btns #xs-social-login-container .xs-login .xs-login__item {
+  width: fit-content;
+}
+
+.login-btns #xs-social-login-container .xs-login .xs-login__item--icon {
+  position: relative;
+  border-radius: 5px;
+  background: #FFF;
+  width: 213px;
+  height: 43px;
+  cursor: pointer;
+}
+
+.login-btns #xs-social-login-container .xs-login .xs-login__item--icon::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 16px;
+  transform: translate(0, -50%);
+  width: 25px;
+  height: 25px;
+  background: url("https://lawinplayvip.com/wp-content/uploads/2024/09/google-logo.webp") no-repeat center/cover;
+}
+
+.login-btns #xs-social-login-container .xs-login .met-social::before {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translate(0, -50%);
+  content: "Login with Google";
+  color: #5C5C5C;
+  font-family: "Inria Sans";
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.login-btns #xs-social-login-container .xs-login .xs-login__item--icon:hover {
+  color: transparent;
+  background: rgba(255, 255, 255, 0.85);
+}

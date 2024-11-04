@@ -1,0 +1,168 @@
+$titleColor:#F41E73;
+$alertBorderColor:#d100f4;
+$tableTheadBg:rgba(244, 30, 115, 0.5);
+$effectsBtnBg:rgba(244, 30, 115, 0.70);
+$top10tableColor:rgba(171, 32, 88, 0.70);
+$top10tableColor2:rgba(152, 4, 75, 0.5);
+
+$alertZIndex:100;
+$alertBodyZIndex:110;
+
+$gameWrapW:800px;
+$alertPadding-pc:24px;
+$linear-gradient-bg:linear-gradient(90deg, rgba(188, 49, 95, 0.4) 0%, rgba(223, 13, 209, 0.4) 100%);
+
+$IconH-28:28px;
+$userNameIconH:34px;
+
+$puzzleW:120px;
+$puzzleH:$puzzleW;
+$puzzleGroupGap:2px;
+$puzzleGroupGap-mob:1px;
+$puzzleGroupBorder:3px;
+$puzzleW-mob:16vmin;
+/*抓大概*/
+$puzzleH-mob:$puzzleW-mob;
+$puzzleDragzoneW:$puzzleW;
+$puzzleDragzoneH-mob:$puzzleH-mob;
+$puzzleDragzoneW-mob:$puzzleW-mob * 5;
+$puzzleDragzoneH:($puzzleH * 5)+($puzzleGroupGap * 4);
+$puzzleGroupW:($puzzleW * 3)+($puzzleGroupGap * 2)+($puzzleGroupBorder * 2);
+$puzzleGroupH:($puzzleH * 3)+($puzzleGroupGap * 2)+($puzzleGroupBorder * 2);
+$puzzleBoxH-mob:27vmin;
+$puzzleGroupH-mob:($puzzleBoxH-mob * 3)+2vmin;
+$puzzleGroupW-mob:($puzzleBoxH-mob * 3)+3vmin;
+$puzzleBoxW-mob:$puzzleBoxH-mob;
+
+
+
+
+$top10MessageIconPosition:5px;
+$top10MessagePadding-mob:30px;
+$top10MessagePadding-pc:calc($IconH-28 + 20px);
+
+
+$top10MessageIcon:"https://lodigamer.com/wp-content/uploads/2024/10/pipoy-thanksgiving-s.webp";
+$top10MessageIcon2:"https://lodigamer.com/wp-content/uploads/2024/10/pipay-thanksgiving-s.webp";
+$goldenCrownImg:"https://lodigamer.com/wp-content/uploads/2024/09/gold.webp";
+$silverCrownImg:"https://lodigamer.com/wp-content/uploads/2024/09/sliver.webp";
+$bronzeCrownImg:"https://lodigamer.com/wp-content/uploads/2024/09/bronze.webp";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 242, 0);
+}
+
+.gradient-bg {
+  position: relative;
+  background: $linear-gradient-bg;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: $alertZIndex;
+    right: 0;
+    bottom: 0;
+    background: url("../images/icon/lodi-logo-w2.webp") no-repeat center/cover;
+    width: 265px;
+    height: 185px;
+  }
+}
+
+.effects-btn {
+  z-index: $alertBodyZIndex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 50px;
+  border: 3px solid $titleColor;
+  background: $effectsBtnBg;
+  padding: 6px 13px;
+  min-width: 195px;
+  color: #fff;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+
+  img {
+    height: 24px;
+  }
+
+  &:hover {
+    background: $titleColor;
+  }
+}
+
+.black-btn {
+  z-index: $alertBodyZIndex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 50px;
+  border: 3px solid $titleColor;
+  background: rgba(0, 0, 0, 0.70);
+  padding: 6px 16px;
+  min-width: 195px;
+  cursor: pointer;
+
+  img {
+    height: 24px;
+  }
+
+  &:hover {
+    background: $titleColor;
+  }
+}
+
+/*--------------------- 動畫樣式 ------------------------*/
+.hidden {
+  animation-name: hidden;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  /*維持動畫最後模樣*/
+}
+
+.show {
+  animation-name: show;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  /*維持動畫最後模樣*/
+}
+
+.puzzleBox.hover {
+  background-color: #c6c6c64b !important;
+}
+.puzzle-dragzone.hover {
+  background-color: #c6c6c64b !important;
+}
+
+/*--------------------- 動畫 ------------------------*/
+@keyframes hidden {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
